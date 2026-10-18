@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17130e">
+<meta name="description" content="Kacsa Sufni Rádió – A régitől az újig. Retró hangulat, válogatott zenék, élő internetes rádió.">
+<title>Kacsa Sufni Rádió 🦆</title>
+
+<style>
+:root {
+    --bg: #17130e;
+    --panel: #252017;
+    --yellow: #f4c95d;
+    --cream: #f4e8c9;
+    --red: #e85d45;
+    --muted: #b9aa8b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--cream);
+    background:
+        radial-gradient(ellipse at top, #40321e 0%, var(--bg) 65%);
+    font-family: "Courier New", monospace;
+}
+
+header {
+    text-align: center;
+    padding: 42px 18px 24px;
+    border-bottom: 3px dashed #69522e;
+}
+
+.logo {
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: var(--yellow);
+    font-size: clamp(1.7rem, 6vw, 3.6rem);
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 #6d3923;
+}
+
+.tagline {
+    color: var(--muted);
+    margin-top: 14px;
+    letter-spacing: 2px;
+}
+
+main {
+    width: min(720px, 92%);
+    margin: 34px auto;
+}
+
+.radio {
+    padding: 26px;
+    background: var(--panel);
+    border: 3px solid #8b7042;
+    border-radius: 14px;
+    box-shadow: 8px 8px 0 #0b0906;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--red);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+}
+
+.display {
+    margin: 24px 0;
+    padding: 24px 12px;
+    text-align: center;
+    color: #a7ef91;
+    background: #10190e;
+    border: 2px solid #4d6139;
+    border-radius: 6px;
+}
+
+.display h2 {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+#track {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    cursor: pointer;
+    font: bold 1rem "Courier New", monospace;
+}
+
+#play {
+    padding: 16px 24px;
+    color: #21180b;
+    background: var(--yellow);
+    border: 3px solid #fff0b5;
+    border-radius: 8px;
+    box-shadow: 0 4px 0 #94702c;
+}
+
+#play:hover { filter: brightness(1.1); }
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="range"] {
+    width: 125px;
+    accent-color: var(--yellow);
+}
+
+.info {
+    margin-top: 28px;
+    padding: 22px;
+    border-left: 4px solid var(--red);
+    background: #211b13;
+    line-height: 1.7;
+}
+
+.info h2 {
+    margin-top: 0;
+    color: var(--yellow);
+}
+
+footer {
+    text-align: center;
+    padding: 25px 12px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    .radio { padding: 17px; }
+    .controls { flex-direction: column; }
+    .volume { margin-top: 8px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <div class="logo">🦆</div>
+    <h1>KACSA SUFNI RÁDIÓ</h1>
+    <div class="tagline">A RÉGITŐL AZ ÚJIG</div>
+</header>
+
+<main>
+    <section class="radio">
+        <div class="status">
+            <span class="dot"></span>
+            <span>SUFNIADÁS</span>
+        </div>
+
+        <div class="display">
+            <h2>📻 MOST A SUFNIBAN</h2>
+            <div id="track">Kacsa Sufni Rádió</div>
+            <div id="message">Nyomd meg a lejátszás gombot!</div>
+        </div>
+
+        <div class="controls">
+            <button id="play" type="button">▶ INDULJON A BANDA!</button>
+
+            <div class="volume">
+                <label for="volume">🔊</label>
+                <input id="volume" type="range"
+                       min="0" max="1" step="0.01" value="0.8">
+            </div>
+        </div>
+
+        <audio id="radio" preload="none">
+            <source <source src="https://kacsa-radio.tunnel.to/radio.mp3" type="audio/mpeg">src="/radio.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <section class="info">
+        <h2>🛠️ A SUFNI SZABÁLYAI</h2>
+        <p>
+            Itt nem a csillogás számít, hanem a zene!
+            Régi kedvencek, új felfedezések és válogatott
+            dallamok egyenesen a sufni mélyéről.
+        </p>
+        <p><strong>🎶 Kacsa Sufni Rádió – A régitől az újig!</strong></p>
+    </section>
+</main>
+
+<footer>
+    🦆 KACSA SUFNI RÁDIÓ · INTERNETES RÁDIÓ · JÓ ZENÉK, JÓ HANGULAT
+</footer>
+
+<script>
+const audio = document.getElementById("radio");
+const playButton = document.getElementById("play");
+const volume = document.getElementById("volume");
+const message = document.getElementById("message");
+
+audio.volume = Number(volume.value);
+
+playButton.addEventListener("click", async () => {
+    if (audio.paused) {
+        message.textContent = "Kapcsolódás a rádióhoz...";
+        try {
+            await audio.play();
+        } catch (error) {
+            message.textContent =
+                "Nem sikerült csatlakozni. Ellenőrizd a rádió elérhetőségét!";
+        }
+    } else {
+        audio.pause();
+    }
+});
+
+volume.addEventListener("input", () => {
+    audio.volume = Number(volume.value);
+});
+
+audio.addEventListener("playing", () => {
+    playButton.textContent = "⏸ SZÜNET";
+    message.textContent = "Kapcsolódva – szól a sufni!";
+});
+
+audio.addEventListener("pause", () => {
+    playButton.textContent = "▶ INDULJON A BANDA!";
+    if (audio.error) {
+        message.textContent = "A rádiófolyam nem érhető el.";
+    } else {
+        message.textContent = "A lejátszás szünetel.";
+    }
+});
+
+audio.addEventListener("waiting", () => {
+    message.textContent = "Pillanat, töltjük a zenét...";
+});
+
+audio.addEventListener("error", () => {
+    message.textContent =
+        "Nem érhető el a rádió. Próbáld meg később!";
+});
+</script>
+</body>
+</html>
