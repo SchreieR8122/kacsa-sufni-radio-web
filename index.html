@@ -1,277 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#17130e">
-<meta name="description" content="Kacsa Sufni Rádió – A régitől az újig. Retró hangulat, válogatott zenék, élő internetes rádió.">
-<title>Kacsa Sufni Rádió 🦆</title>
-
+<meta name="theme-color" content="#111018">
+<meta name="description" content="Kacsa Sufni Rádió – a régitől az újig. Retró hangulat, válogatott zenék, chat, YouTube és időjárás.">
+<title>Kacsa Sufni Rádió 🦆 | A régitől az újig</title>
 <style>
-:root {
-    --bg: #17130e;
-    --panel: #252017;
-    --yellow: #f4c95d;
-    --cream: #f4e8c9;
-    --red: #e85d45;
-    --muted: #b9aa8b;
-}
-
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    color: var(--cream);
-    background:
-        radial-gradient(ellipse at top, #40321e 0%, var(--bg) 65%);
-    font-family: "Courier New", monospace;
-}
-
-header {
-    text-align: center;
-    padding: 42px 18px 24px;
-    border-bottom: 3px dashed #69522e;
-}
-
-.logo {
-    font-size: clamp(3rem, 10vw, 6rem);
-    margin-bottom: 5px;
-}
-
-h1 {
-    color: var(--yellow);
-    font-size: clamp(1.7rem, 6vw, 3.6rem);
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 0 #6d3923;
-}
-
-.tagline {
-    color: var(--muted);
-    margin-top: 14px;
-    letter-spacing: 2px;
-}
-
-main {
-    width: min(720px, 92%);
-    margin: 34px auto;
-}
-
-.radio {
-    padding: 26px;
-    background: var(--panel);
-    border: 3px solid #8b7042;
-    border-radius: 14px;
-    box-shadow: 8px 8px 0 #0b0906;
-}
-
-.status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--red);
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.dot {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 12px var(--red);
-}
-
-.display {
-    margin: 24px 0;
-    padding: 24px 12px;
-    text-align: center;
-    color: #a7ef91;
-    background: #10190e;
-    border: 2px solid #4d6139;
-    border-radius: 6px;
-}
-
-.display h2 {
-    margin: 0 0 12px;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-
-#track {
-    font-size: 0.95rem;
-    overflow-wrap: anywhere;
-}
-
-#message {
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.controls {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-button {
-    cursor: pointer;
-    font: bold 1rem "Courier New", monospace;
-}
-
-#play {
-    padding: 16px 24px;
-    color: #21180b;
-    background: var(--yellow);
-    border: 3px solid #fff0b5;
-    border-radius: 8px;
-    box-shadow: 0 4px 0 #94702c;
-}
-
-#play:hover { filter: brightness(1.1); }
-
-.volume {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-input[type="range"] {
-    width: 125px;
-    accent-color: var(--yellow);
-}
-
-.info {
-    margin-top: 28px;
-    padding: 22px;
-    border-left: 4px solid var(--red);
-    background: #211b13;
-    line-height: 1.7;
-}
-
-.info h2 {
-    margin-top: 0;
-    color: var(--yellow);
-}
-
-footer {
-    text-align: center;
-    padding: 25px 12px;
-    color: var(--muted);
-    font-size: 0.8rem;
-}
-
-@media (max-width: 480px) {
-    .radio { padding: 17px; }
-    .controls { flex-direction: column; }
-    .volume { margin-top: 8px; }
-}
+:root{color-scheme:dark;--bg:#111018;--panel:#211e2c;--ink:#f8f1e8;--muted:#c0b6ca;--amber:#ffc66e;--orange:#ff805f;--teal:#66e0d0;--purple:#9c86ff;--line:rgba(255,255,255,.13);--shadow:0 18px 55px rgba(0,0,0,.32)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);background:radial-gradient(ellipse at 12% 2%,rgba(156,134,255,.2),transparent 35rem),radial-gradient(ellipse at 92% 16%,rgba(102,224,208,.13),transparent 34rem),linear-gradient(145deg,#111018,#171320 55%,#10151c);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:4px}.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.mini-brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em}.mini-brand span:first-child{font-size:1.55rem}.top-note{color:var(--muted);font-size:.85rem;text-align:right}.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);align-items:center;gap:24px;padding:58px 0 42px}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border-radius:999px;border:1px solid rgba(102,224,208,.34);background:rgba(102,224,208,.09);color:var(--teal);text-transform:uppercase;font-size:.74rem;font-weight:900;letter-spacing:.13em}.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:#ff645c;box-shadow:0 0 12px #ff645c}h1{margin:17px 0 8px;max-width:750px;font-size:clamp(2.5rem,7vw,5.5rem);line-height:.98;letter-spacing:-.055em}h1 .accent{color:var(--amber)}.tagline{color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);margin:16px 0 23px;max-width:560px}.hero-links,.actions{display:flex;flex-wrap:wrap;gap:10px}.link-pill,.action-link{display:inline-flex;justify-content:center;align-items:center;gap:9px;text-decoration:none;padding:11px 15px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.055);font-weight:800;transition:transform .18s,background .18s,border-color .18s}.link-pill:hover,.action-link:hover{transform:translateY(-2px);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}.link-pill.chat{border-color:rgba(102,224,208,.4)}.link-pill.youtube{border-color:rgba(255,128,95,.42)}.art{position:relative;display:grid;place-items:center;min-height:290px}.vinyl{position:relative;width:clamp(210px,28vw,310px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f5b75d 0 4.2%,#211f29 4.5% 7%,transparent 7.4%),repeating-radial-gradient(circle,#282632 0 2px,#101016 3px 5px,#24212b 6px 8px);border:7px solid #07070c;box-shadow:0 20px 58px rgba(0,0,0,.5),inset 0 0 0 2px #494452;animation:slowspin 22s linear infinite}.vinyl:before{content:"";position:absolute;inset:13%;border:1px solid rgba(255,255,255,.09);border-radius:50%}.vinyl:after{content:"";position:absolute;inset:27%;border:1px solid rgba(255,255,255,.08);border-radius:50%}.headphones{position:absolute;right:0;bottom:1px;font-size:clamp(5rem,10vw,8rem);filter:drop-shadow(0 12px 14px rgba(0,0,0,.4));transform:rotate(-12deg)}.spark{position:absolute;color:var(--amber);font-size:1.8rem}.spark.one{top:20px;left:10%}.spark.two{bottom:36px;left:3%;color:var(--teal)}@keyframes slowspin{to{transform:rotate(360deg)}}main{padding:12px 0 52px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}.card{position:relative;min-width:0;padding:24px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(39,35,51,.96),rgba(24,22,32,.95));box-shadow:var(--shadow);overflow:hidden}.card:before{content:"";position:absolute;width:160px;height:160px;right:-90px;top:-95px;border-radius:50%;border:1px solid rgba(255,255,255,.06);box-shadow:0 0 0 14px rgba(255,255,255,.018),0 0 0 30px rgba(255,255,255,.012);pointer-events:none}.card-wide{grid-column:1/-1}.section-label{margin:0 0 8px;color:var(--teal);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900}h2{margin:0 0 12px;font-size:clamp(1.35rem,3vw,1.8rem);letter-spacing:-.025em}p{color:var(--muted);margin:8px 0 0}.radio-card{border-color:rgba(255,198,110,.28)}.radio-head{display:flex;justify-content:space-between;align-items:start;gap:14px}.live-badge{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:8px;color:#ff9e93;background:rgba(255,128,95,.1);font-size:.72rem;font-weight:900;letter-spacing:.1em}.live-badge i{width:7px;height:7px;border-radius:50%;background:var(--orange)}.display{margin:20px 0;padding:17px;border:1px solid rgba(102,224,208,.26);border-radius:13px;background:linear-gradient(115deg,#101c1c,#11131b);box-shadow:inset 0 0 25px rgba(102,224,208,.05)}.display-top{display:flex;justify-content:space-between;gap:12px;color:var(--teal);font-size:.73rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}#track{font-size:1.15rem;font-weight:850;color:#f5f3e9;margin-top:11px;overflow-wrap:anywhere}#message{font-size:.88rem;color:#a4c7bc;margin-top:4px}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:14px}#play{cursor:pointer;border:0;border-radius:12px;padding:14px 18px;color:#23172a;background:linear-gradient(110deg,var(--amber),#ff9870);font:900 1rem inherit;font-family:inherit;font-size:1rem;font-weight:900;box-shadow:0 7px 0 #9d563d;transition:transform .15s,filter .15s}#play:hover{filter:brightness(1.07);transform:translateY(-1px)}#play:active{transform:translateY(3px);box-shadow:0 3px 0 #9d563d}.volume{display:flex;align-items:center;gap:9px;color:var(--muted)}input[type=range]{width:125px;accent-color:var(--teal);cursor:pointer}.fine-print{font-size:.77rem;margin-top:16px}.feature-row{display:grid;grid-template-columns:50px minmax(0,1fr);align-items:start;gap:13px}.feature-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;font-size:1.5rem;background:rgba(156,134,255,.13);border:1px solid rgba(156,134,255,.2)}.actions{margin-top:18px}.action-link{padding:12px 14px;border-radius:12px}.weather-layout{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}.weather-temp{font-size:clamp(2.4rem,6vw,4rem);line-height:1;font-weight:900;letter-spacing:-.06em;color:var(--amber)}.weather-temp small{font-size:1.3rem;letter-spacing:0}.weather-icon{font-size:3.7rem;text-align:right}.weather-details{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.weather-chip{padding:7px 10px;background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:10px;font-size:.84rem;color:var(--muted)}.weather-actions{margin-top:15px;display:flex;align-items:center;flex-wrap:wrap;gap:12px}select,.small-button{color:var(--ink);background:#292536;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:9px 11px;font:inherit;font-size:.9rem}.small-button{cursor:pointer;font-weight:800}.weather-status{font-size:.78rem;color:var(--muted)}.tiktok-placeholder{display:flex;gap:12px;align-items:center;padding:14px;margin-top:17px;border:1px dashed rgba(255,255,255,.22);border-radius:13px;background:rgba(255,255,255,.025)}.tiktok-placeholder strong{display:block;color:var(--ink)}.tiktok-placeholder span{color:var(--muted);font-size:.84rem}footer{border-top:1px solid var(--line);padding:24px 0 32px;color:var(--muted);font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}footer a{color:var(--teal)}@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:42px;gap:0}.hero-copy{position:relative;z-index:1}.art{min-height:200px;margin-top:-2px}.vinyl{width:205px}.headphones{right:15%;bottom:0;font-size:5rem}.grid{grid-template-columns:1fr}.card-wide{grid-column:auto}.top-note{max-width:46%}}@media(max-width:420px){.wrap{width:min(100% - 22px,1120px)}.card{padding:19px;border-radius:18px}.controls{align-items:stretch}#play{width:100%}.volume{justify-content:center}.weather-layout{grid-template-columns:1fr auto}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
 </head>
-
 <body>
-<header>
-    <div class="logo">🦆</div>
-    <h1>KACSA SUFNI RÁDIÓ</h1>
-    <div class="tagline">A RÉGITŐL AZ ÚJIG</div>
+<div class="wrap">
+<nav class="topbar" aria-label="Fő navigáció"><div class="mini-brand"><span aria-hidden="true">🦆</span><span>KACSA SUFNI RÁDIÓ</span></div><div class="top-note">Retró alapok · mai lendület</div></nav>
+<header class="hero">
+<div class="hero-copy">
+<div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Internetes rádió · Sufniadás</div>
+<h1>KACSA <span class="accent">SUFNI</span><br>RÁDIÓ</h1>
+<p class="tagline">A régitől az újig — régi kedvencek, friss felfedezések és jó hangulat egy helyen. Dőlj hátra, tekerd fel, és érezd a sufni lüktetését!</p>
+<div class="hero-links"><a class="link-pill chat" href="https://xat.com/Sufni" target="_blank" rel="noopener noreferrer">💬 Beszélgess velünk</a><a class="link-pill youtube" href="https://www.youtube.com/@Sufni-Dj" target="_blank" rel="noopener noreferrer">▶ YouTube élő / csatorna</a></div>
+</div>
+<div class="art" aria-hidden="true"><span class="spark one">✦</span><span class="spark two">♫</span><div class="vinyl"></div><div class="headphones">🎧</div></div>
 </header>
-
-<main>
-    <section class="radio">
-        <div class="status">
-            <span class="dot"></span>
-            <span>SUFNIADÁS</span>
-        </div>
-
-        <div class="display">
-            <h2>📻 MOST A SUFNIBAN</h2>
-            <div id="track">Kacsa Sufni Rádió</div>
-            <div id="message">Nyomd meg a lejátszás gombot!</div>
-        </div>
-
-        <div class="controls">
-            <button id="play" type="button">▶ INDULJON A BANDA!</button>
-
-            <div class="volume">
-                <label for="volume">🔊</label>
-                <input id="volume" type="range"
-                       min="0" max="1" step="0.01" value="0.8">
-            </div>
-        </div>
-
-        <audio id="radio" preload="none">
-                        <source src="https://radio.kacsa.media.hu/radio.mp3" type="audio/mpeg">
-        </audio>
-    </section>
-
-    <section class="info">
-        <h2>🛠️ A SUFNI SZABÁLYAI</h2>
-        <p>
-            Itt nem a csillogás számít, hanem a zene!
-            Régi kedvencek, új felfedezések és válogatott
-            dallamok egyenesen a sufni mélyéről.
-        </p>
-        <p><strong>🎶 Kacsa Sufni Rádió – A régitől az újig!</strong></p>
-    </section>
-</main>
-
-<footer>
-    🦆 KACSA SUFNI RÁDIÓ · INTERNETES RÁDIÓ · JÓ ZENÉK, JÓ HANGULAT
-</footer>
-
+<main><div class="grid">
+<section class="card radio-card" aria-labelledby="radio-title">
+<div class="radio-head"><div><p class="section-label">01 / Hallgasd</p><h2 id="radio-title">📻 Rádió lejátszó</h2></div><div class="live-badge"><i aria-hidden="true"></i> ADÁS</div></div>
+<p>Indítsd el a zenét, és legyen nálad is sufni-hangulat!</p>
+<div class="display" aria-live="polite"><div class="display-top"><span>● Most a sufniban</span><span>192 kbps</span></div><div id="track">Kacsa Sufni Rádió</div><div id="message">A lejátszáshoz nyomd meg az indítást!</div></div>
+<div class="controls"><button id="play" type="button">▶ INDULJON A BANDA!</button><div class="volume"><label for="volume">🔊 Hangerő</label><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Hangerő"></div></div>
+<audio id="radio" preload="none"><source src="https://radio.kacsa.media.hu/radio.mp3" type="audio/mpeg"></audio>
+<p class="fine-print">Ha elsőre nem indul, próbáld meg újra pár másodperc múlva. A böngésző csak a gomb megnyomása után indítja el a lejátszást.</p>
+</section>
+<section class="card" aria-labelledby="about-title"><p class="section-label">02 / Kik vagyunk?</p><div class="feature-row"><div class="feature-icon" aria-hidden="true">📼</div><div><h2 id="about-title">A sufni hangulata</h2><p>A Kacsa Sufni Rádióban a retró találkozik a jelennel. Régi kedvencek, új felfedezések és válogatott dallamok szólnak — sallang nélkül, lelkesedéssel. Ez a hely a zenéről, a közösségről és a jó hangulatról szól.</p><p><strong>🎶 Kacsa Sufni Rádió – A régitől az újig!</strong></p></div></div></section>
+<section class="card" aria-labelledby="chat-title"><p class="section-label">03 / Közösség</p><div class="feature-row"><div class="feature-icon" aria-hidden="true">💬</div><div><h2 id="chat-title">Találkozzunk a chatben!</h2><p>Ugorj be a Sufni beszélgetős részébe, köszönj be, és dumáljunk egy jót zenehallgatás közben.</p></div></div><div class="actions"><a class="action-link" href="https://xat.com/Sufni" target="_blank" rel="noopener noreferrer">💬 Sufni chat megnyitása ↗</a></div></section>
+<section class="card" aria-labelledby="youtube-title"><p class="section-label">04 / Videó és élő</p><div class="feature-row"><div class="feature-icon" aria-hidden="true">▶️</div><div><h2 id="youtube-title">Sufni-DJ a YouTube-on</h2><p>Keresd a csatornát az élő adásokért, videókért és további Sufni-tartalmakért.</p></div></div><div class="actions"><a class="action-link" href="https://www.youtube.com/@Sufni-Dj" target="_blank" rel="noopener noreferrer">▶ YouTube-csatorna ↗</a></div><div class="tiktok-placeholder"><span aria-hidden="true" style="font-size:1.7rem">♪</span><div><strong>TikTok — hamarosan</strong><span>A csatorna készül; a linket akkor adjuk hozzá, ha megvan a végleges cím.</span></div></div></section>
+<section class="card card-wide" aria-labelledby="weather-title"><p class="section-label">05 / Kinti világ</p><div class="weather-layout"><div><h2 id="weather-title">🌦️ Időjárás a hallgatóknak</h2><p id="weather-description">Betöltjük a friss időjárási adatokat…</p><div class="weather-temp" id="weather-temp">--<small> °C</small></div></div><div class="weather-icon" id="weather-icon" aria-hidden="true">🌤️</div></div>
+<div class="weather-details"><span class="weather-chip" id="feels-like">🌡️ Hőérzet: -- °C</span><span class="weather-chip" id="humidity">💧 Páratartalom: --%</span><span class="weather-chip" id="wind">💨 Szél: -- km/h</span></div>
+<div class="weather-actions"><label for="weather-city">Város:</label><select id="weather-city"><option value="47.4979,19.0402" selected>Budapest</option><option value="47.5316,21.6273">Debrecen</option><option value="46.2530,20.1414">Szeged</option><option value="47.6875,17.6504">Győr</option><option value="46.0727,18.2323">Pécs</option><option value="47.2307,16.6218">Szombathely</option></select><button class="small-button" id="weather-refresh" type="button">↻ Frissítés</button><span class="weather-status" id="weather-status" role="status">Indítás…</span></div>
+<p class="fine-print">Az adatok az Open-Meteo időjárási szolgáltatásából érkeznek. <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p></section>
+</div></main>
+<footer><div class="footer-inner"><span>🦆 KACSA SUFNI RÁDIÓ · JÓ ZENÉK, JÓ HANGULAT</span><span>Retró szív, modern hullámhossz. ♫</span></div></footer>
+</div>
 <script>
-const audio = document.getElementById("radio");
-const playButton = document.getElementById("play");
-const volume = document.getElementById("volume");
-const message = document.getElementById("message");
-
-audio.volume = Number(volume.value);
-
-playButton.addEventListener("click", async () => {
-    if (audio.paused) {
-        message.textContent = "Kapcsolódás a rádióhoz...";
-        try {
-            await audio.play();
-        } catch (error) {
-            message.textContent =
-                "Nem sikerült csatlakozni. Ellenőrizd a rádió elérhetőségét!";
-        }
-    } else {
-        audio.pause();
-    }
-});
-
-volume.addEventListener("input", () => {
-    audio.volume = Number(volume.value);
-});
-
-audio.addEventListener("playing", () => {
-    playButton.textContent = "⏸ SZÜNET";
-    message.textContent = "Kapcsolódva – szól a sufni!";
-});
-
-audio.addEventListener("pause", () => {
-    playButton.textContent = "▶ INDULJON A BANDA!";
-    if (audio.error) {
-        message.textContent = "A rádiófolyam nem érhető el.";
-    } else {
-        message.textContent = "A lejátszás szünetel.";
-    }
-});
-
-audio.addEventListener("waiting", () => {
-    message.textContent = "Pillanat, töltjük a zenét...";
-});
-
-audio.addEventListener("error", () => {
-    message.textContent =
-        "Nem érhető el a rádió. Próbáld meg később!";
-});
+const audio=document.getElementById('radio'),playButton=document.getElementById('play'),volume=document.getElementById('volume'),message=document.getElementById('message');
+audio.volume=Number(volume.value);
+playButton.addEventListener('click',async()=>{if(audio.paused){message.textContent='Kapcsolódás a rádióhoz…';try{await audio.play()}catch(error){message.textContent='Nem sikerült elindítani. Ellenőrizd a kapcsolatot, majd próbáld újra!'}}else audio.pause()});
+volume.addEventListener('input',()=>{audio.volume=Number(volume.value)});
+audio.addEventListener('playing',()=>{playButton.textContent='⏸ SZÜNET';message.textContent='Kapcsolódva — szól a sufni!'});
+audio.addEventListener('pause',()=>{playButton.textContent='▶ INDULJON A BANDA!';if(!audio.error)message.textContent='A lejátszás szünetel.'});
+audio.addEventListener('waiting',()=>{message.textContent='Pillanat, töltjük a zenét…'});
+audio.addEventListener('error',()=>{message.textContent='A rádiófolyam most nem érhető el. Próbáld meg később!'});
+const places=document.getElementById('weather-city'),weatherStatus=document.getElementById('weather-status');
+const weatherCodes={0:['Derült ég','☀️'],1:['Többnyire derült','🌤️'],2:['Részben felhős','⛅'],3:['Borult','☁️'],45:['Köd','🌫️'],48:['Zúzmarás köd','🌫️'],51:['Enyhe szitálás','🌦️'],53:['Szitálás','🌦️'],55:['Erős szitálás','🌧️'],56:['Ónos szitálás','🌧️'],57:['Ónos szitálás','🌧️'],61:['Enyhe eső','🌧️'],63:['Eső','🌧️'],65:['Erős eső','🌧️'],66:['Ónos eső','🌧️'],67:['Ónos eső','🌧️'],71:['Enyhe havazás','🌨️'],73:['Havazás','🌨️'],75:['Erős havazás','❄️'],77:['Hószemcsék','🌨️'],80:['Zápor','🌦️'],81:['Záporok','🌧️'],82:['Heves zápor','⛈️'],85:['Hózápor','🌨️'],86:['Erős hózápor','❄️'],95:['Zivatar','⛈️'],96:['Zivatar jégesővel','⛈️'],99:['Erős zivatar jégesővel','⛈️']};
+async function loadWeather(){const [lat,lon]=places.value.split(','),city=places.options[places.selectedIndex].text;weatherStatus.textContent='Friss adatok lekérése…';document.getElementById('weather-description').textContent=city+' aktuális időjárása';try{const q=new URLSearchParams({latitude:lat,longitude:lon,current:'temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m',temperature_unit:'celsius',wind_speed_unit:'kmh',timezone:'Europe/Budapest'});const response=await fetch('https://api.open-meteo.com/v1/forecast?'+q.toString(),{cache:'no-store'});if(!response.ok)throw new Error('Az időjárási szolgáltatás nem érhető el.');const data=await response.json(),c=data.current,[label,icon]=weatherCodes[c.weather_code]||['Változó idő','🌡️'];document.getElementById('weather-description').textContent=city+' · '+label;document.getElementById('weather-temp').innerHTML=Math.round(c.temperature_2m)+'<small> °C</small>';document.getElementById('weather-icon').textContent=icon;document.getElementById('feels-like').textContent='🌡️ Hőérzet: '+Math.round(c.apparent_temperature)+' °C';document.getElementById('humidity').textContent='💧 Páratartalom: '+c.relative_humidity_2m+'%';document.getElementById('wind').textContent='💨 Szél: '+Math.round(c.wind_speed_10m)+' km/h';weatherStatus.textContent='Frissítve: '+(c.time?c.time.replace('T',' '):'most')}catch(error){weatherStatus.textContent='Most nem sikerült frissíteni.';document.getElementById('weather-description').textContent='Az időjárási adatok átmenetileg nem tölthetők be. Próbáld újra később!'}}
+places.addEventListener('change',loadWeather);document.getElementById('weather-refresh').addEventListener('click',loadWeather);loadWeather();
 </script>
 </body>
 </html>
