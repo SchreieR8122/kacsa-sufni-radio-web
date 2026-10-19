@@ -1,3 +1,14 @@
 {
-  "events": []
+  "events": [
+    {
+      "date": "2026-11-01",
+      "title": "Retró DJ-szett",
+      "type": "YouTube élő"
+    },
+    {
+      "date": "2026-11-07",
+      "title": "Sufni kívánságműsor",
+      "type": "Rádió"
+    }
+  ]
 }
