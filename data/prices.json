@@ -1,14 +1,15 @@
 {
   "fuel": {
-    "petrol95": 641.8,
-    "diesel": 709.4,
-    "checkedAt": "2026-10-19T13:00:00+02:00",
-    "source": "https://holtankoljak.hu/"
+    "petrol95": 645,
+    "diesel": 709,
+    "checkedAt": "2026-10-19T11:00:00Z",
+    "source": "https://holtankoljak.hu/uzemanyag_arvaltozasok/",
+    "article": "https://holtankoljak.hu/uzemanyag_arvaltozasok/arvalt/uzemanyagar_valtozas_2026_10_08_tol"
   },
   "toll": {
     "year": 2026,
     "effectiveFrom": "2026-01-01",
-    "checkedAt": "2026-10-19T13:00:00+02:00",
+    "checkedAt": "2026-10-19T11:00:00Z",
     "source": "https://nemzetiutdij.hu/hu/e-matrica/dijak/e-matrica-arak",
     "products": {
       "D1": {
