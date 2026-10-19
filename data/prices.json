@@ -1,0 +1,52 @@
+{
+  "fuel": {
+    "petrol95": 641.8,
+    "diesel": 709.4,
+    "checkedAt": "2026-10-19T13:00:00+02:00",
+    "source": "https://holtankoljak.hu/"
+  },
+  "toll": {
+    "year": 2026,
+    "effectiveFrom": "2026-01-01",
+    "checkedAt": "2026-10-19T13:00:00+02:00",
+    "source": "https://nemzetiutdij.hu/hu/e-matrica/dijak/e-matrica-arak",
+    "products": {
+      "D1": {
+        "daily": 5550,
+        "weekly": 6900,
+        "monthly": 11170,
+        "annualNational": 61760,
+        "annualCounty": 7190,
+        "bazCounty": 2500,
+        "m1Regional": 15000
+      },
+      "D2": {
+        "daily": 7890,
+        "weekly": 10040,
+        "monthly": 15820,
+        "annualNational": 87650,
+        "annualCounty": 14370,
+        "bazCounty": 5000,
+        "m1Regional": 30000
+      },
+      "D1M": {
+        "daily": 2770,
+        "weekly": 3450,
+        "monthly": 5590,
+        "annualNational": 61760,
+        "annualCounty": 7190,
+        "bazCounty": 2500,
+        "m1Regional": 15000
+      },
+      "U": {
+        "daily": 5550,
+        "weekly": 6900,
+        "monthly": 11170,
+        "annualNational": 61760,
+        "annualCounty": 7190,
+        "bazCounty": 2500,
+        "m1Regional": 15000
+      }
+    }
+  }
+}
