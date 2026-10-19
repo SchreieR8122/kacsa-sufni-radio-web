@@ -29,6 +29,7 @@
 <button class="tab" id="tab-about" role="tab" aria-selected="true" aria-controls="panel-about"><span class="ico">🦆</span><span>Rólunk</span></button>
 <button class="tab" id="tab-radio" role="tab" aria-selected="false" aria-controls="panel-radio"><span class="ico">📻</span><span>Rádió</span></button>
 <button class="tab" id="tab-info" role="tab" aria-selected="false" aria-controls="panel-info"><span class="ico">🌦️</span><span>Infó &amp; tippek</span></button>
+<button class="tab" id="tab-sport" role="tab" aria-selected="false" aria-controls="panel-sport"><span class="ico">🏟️</span><span>Sportesemények</span></button>
 <button class="tab" id="tab-program" role="tab" aria-selected="false" aria-controls="panel-program"><span class="ico">🗓️</span><span>Adásterv</span></button>
 <button class="tab" id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact"><span class="ico">🤝</span><span>Kapcsolatok</span></button>
 </nav>
@@ -71,6 +72,19 @@
 </div>
 </section>
 
+<section class="panel" id="panel-sport" role="tabpanel" aria-labelledby="tab-sport" hidden>
+<div class="grid">
+<article class="card card-wide"><p class="section-label">Sportesemények · friss program</p><h2>🏟️ Mi jön a pályán?</h2><p>Rövid eseményinfók és közvetlen hivatkozások a hivatalos menetrendekhez. Az időpontok változhatnak, indulás előtt ellenőrizd a szervező oldalát.</p><div class="program-list">
+<div class="program"><div class="program-time">Labdarúgás · férfi A-válogatott</div><h3>Georgia – Magyarország</h3><p>📅 2026. november 14., szombat · 18:00. A magyar válogatott következő mérkőzéseinek egyike.</p><a class="action-link" href="https://valogatott.mlsz.hu/ferfi-a-valogatott/meccsek" target="_blank" rel="noopener noreferrer">⚽ Hivatalos meccsadatok ↗</a></div>
+<div class="program"><div class="program-time">Labdarúgás · férfi A-válogatott</div><h3>Magyarország – Észak-Írország</h3><p>📅 2026. november 17., kedd · 20:45. Hazai válogatott mérkőzés, a pontos részletek az MLSZ oldalán.</p><a class="action-link" href="https://valogatott.mlsz.hu/ferfi-a-valogatott/meccsek" target="_blank" rel="noopener noreferrer">🇭🇺 MLSZ menetrend ↗</a></div>
+</div><p class="fine-print">A válogatott mérkőzések időpontjait az MLSZ hivatalos menetrendje alapján tüntetjük fel; változás esetén a hivatalos oldal az irányadó.</p></article>
+<article class="card"><p class="section-label">Élő közvetítések</p><h2>📺 M4 Sport</h2><p>Magyar sportközvetítések, napi sportműsor, élő adások és közvetítési időpontok egy helyen.</p><div class="actions"><a class="action-link" href="https://m4sport.hu/musor" target="_blank" rel="noopener noreferrer">▶ M4 Sport műsorújság ↗</a><a class="action-link" href="https://m4sport.hu/" target="_blank" rel="noopener noreferrer">📰 Sporthírek ↗</a></div></article>
+<article class="card"><p class="section-label">Hazai labdarúgás</p><h2>⚽ Magyar futball</h2><p>Bajnokságok, kupák, válogatott hírek, eredmények és mérkőzésadatok az MLSZ oldalán.</p><div class="actions"><a class="action-link" href="https://www.mlsz.hu/" target="_blank" rel="noopener noreferrer">🇭🇺 MLSZ hírek és eredmények ↗</a></div></article>
+<article class="card"><p class="section-label">Kézilabda</p><h2>🤾 Kézilabda-naptár</h2><p>Meccsnapok és havi eseménynaptár, hogy könnyebb legyen követni a soron következő találkozókat.</p><div class="actions"><a class="action-link" href="https://handball.hu/calendar/" target="_blank" rel="noopener noreferrer">🗓️ Kézilabda-naptár ↗</a></div></article>
+<article class="card card-wide"><p class="section-label">Sufni-infó</p><h2>ℹ️ Programellenőrzés</h2><p>Ez a fül sporteseményeket és hivatalos menetrendeket gyűjt össze, nem fogadási tippeket. A pontos kezdési időt, közvetítési jogot vagy esetleges változást mindig a szervező, illetve a közvetítő oldalán ellenőrizd.</p></article>
+</div>
+</section>
+
 <section class="panel" id="panel-program" role="tabpanel" aria-labelledby="tab-program" hidden>
 <div class="grid">
 <article class="card card-wide"><p class="section-label">04 / Műsortervek</p><div class="calendar-head"><div><h2>🗓️ Sufni-naptár</h2><p>A tervezett rádióadások és YouTube-élők helye. A még nem végleges programokat tervként jelöljük.</p><a class="action-link" style="display:inline-block;margin-top:10px" href="https://github.com/SchreieR8122/kacsa-sufni-radio-web/edit/main/schedule.json" target="_blank" rel="noopener noreferrer">🔐 Naptár beállításai (admin)</a></div><div class="toolbar"><button class="small-button" id="prevMonth" type="button">← Előző</button><strong id="monthLabel">Hónap</strong><button class="small-button" id="nextMonth" type="button">Következő →</button></div></div><div class="calendar-grid" id="calendarGrid" aria-label="Havi adásnaptár"></div><div class="notice" id="scheduleStatus" style="margin-top:16px">A naptár betöltése…</div></article>
@@ -97,7 +111,7 @@
 </div>
 <script>
 const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
-function openTab(name){const target=document.getElementById('tab-'+name);if(!target)return;tabs.forEach(t=>{const active=t===target;t.setAttribute('aria-selected',String(active));const panel=document.getElementById(t.getAttribute('aria-controls'));panel.classList.toggle('active',active);panel.hidden=!active});if(name==='info')loadWeather();if(name==='program')renderCalendar();}
+function openTab(name){const target=document.getElementById('tab-'+name);if(!target)return;tabs.forEach(t=>{const active=t===target;t.setAttribute('aria-selected',String(active));const panel=document.getElementById(t.getAttribute('aria-controls'));panel.classList.toggle('active',active);panel.hidden=!active});if(name==='info'){loadWeather();loadFx();}if(name==='program')renderCalendar();}
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>openTab(t.id.replace('tab-','')));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length].focus();}})});
 document.querySelectorAll('[data-open-tab]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openTab(el.dataset.openTab);window.scrollTo({top:document.querySelector('.tabs').offsetTop-12,behavior:'smooth'});}));
 
@@ -178,8 +192,9 @@ async function loadPrices(){
 loadPrices();
 
 // Currency references converted from EUR reference rates to HUF per unit.
-async function loadFx(){const s=document.getElementById('fx-status');s.textContent='Frissítés…';try{const r=await fetch('https://api.frankfurter.dev/v1/latest?base=EUR&symbols=HUF,USD,GBP,CHF',{cache:'no-store'});if(!r.ok)throw new Error('FX unavailable');const d=await r.json(),rates=d.rates,eur=rates.HUF;const values={EUR:eur,USD:eur/rates.USD,GBP:eur/rates.GBP,CHF:eur/rates.CHF};Object.keys(values).forEach(code=>document.getElementById('fx-'+code).textContent=values[code].toLocaleString('hu-HU',{maximumFractionDigits:2,minimumFractionDigits:2})+' Ft');s.textContent='Referencia dátum: '+(d.date||'friss adat');}catch(e){s.textContent='Az árfolyamforrás most nem elérhető.';}}
+async function loadFx(){const s=document.getElementById('fx-status');s.textContent='Árfolyam ellenőrzése…';try{const r=await fetch('https://api.frankfurter.dev/v1/latest?base=EUR&symbols=HUF,USD,GBP,CHF',{cache:'no-store'});if(!r.ok)throw new Error('FX unavailable');const d=await r.json(),rates=d.rates,eur=rates.HUF;const values={EUR:eur,USD:eur/rates.USD,GBP:eur/rates.GBP,CHF:eur/rates.CHF};Object.keys(values).forEach(code=>document.getElementById('fx-'+code).textContent=values[code].toLocaleString('hu-HU',{maximumFractionDigits:2,minimumFractionDigits:2})+' Ft');s.textContent='Forrásadat dátuma: '+(d.date||'friss adat')+' · automatikus ellenőrzés óránként';}catch(e){s.textContent='Az árfolyamforrás most nem elérhető; a legutóbb betöltött értékek maradnak láthatók.';}}
 loadFx();
+setInterval(()=>{if(!document.hidden)loadFx();},60*60*1000);
 
 // The public calendar loads its entries from schedule.json.
 // To edit it, use the GitHub admin link above and commit changes to that file.
