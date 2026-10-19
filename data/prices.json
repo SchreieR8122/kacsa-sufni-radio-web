@@ -4,13 +4,14 @@
     "diesel": 709,
     "checkedAt": "2026-10-19T11:00:00Z",
     "source": "https://holtankoljak.hu/uzemanyag_arvaltozasok/",
-    "article": "https://holtankoljak.hu/uzemanyag_arvaltozasok/arvalt/uzemanyagar_valtozas_2026_10_08_tol"
+    "article": "https://holtankoljak.hu/uzemanyag_arvaltozasok/arvalt/uzemanyagar_valtozas_2026_10_08_tol",
+    "priceDate": "2026-10-19"
   },
   "toll": {
     "year": 2026,
     "effectiveFrom": "2026-01-01",
     "checkedAt": "2026-10-19T11:00:00Z",
-    "source": "https://nemzetiutdij.hu/hu/e-matrica/dijak/e-matrica-arak",
+    "source": "https://nemzetiutdij.hu/hu/e-matrica-arak",
     "products": {
       "D1": {
         "daily": 5550,
