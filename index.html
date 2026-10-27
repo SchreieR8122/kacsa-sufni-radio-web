@@ -40,6 +40,14 @@
 <article class="card card-wide"><p class="section-label">01 / Ez a Sufni</p><h2>Jó zenék. Jó arcok. Sufni-hangulat. 🦆</h2><p class="big-copy">Ahol a retró odacsap a mai ritmusnak — <em>nincs feszengés, csak zene meg hangulat.</em></p><p>Régi kedvencek, mai felfedezések és néha egy kis DJ-s őrület. Nem steril stúdióvibe: ez a mi kis zenés búvóhelyünk, ahol a hangerő lehet nagy, az egó meg maradhat kicsi.</p><div class="pill-row"><a class="pill amber" href="#panel-radio" data-open-tab="radio">▶ Na, szóljon!</a><a class="pill teal" href="https://discord.gg/YHwnrVwdN" target="_blank" rel="noopener noreferrer">💬 Ugorj be Discordra</a></div></article>
 <article class="card"><p class="section-label">A Sufni-szabályzat</p><h2>🎛️ Hogy megy ez?</h2><div class="feature-grid"><div class="feature"><span class="feature-icon">🎶</span><strong>Csak a zene</strong><p>Régi kedvenc, friss felfedezés — jöhet mind, ami adja.</p></div><div class="feature"><span class="feature-icon">🦆</span><strong>Laza közeg</strong><p>Kevesebb póz, több jó hangulat. Ennyi a nagy titok.</p></div><div class="feature"><span class="feature-icon">🔊</span><strong>Fel a hangerőt</strong><p>Indítsd el a rádiót, és érezd a ritmust!</p></div></div></article>
 <article class="card"><p class="section-label">A pult mögött</p><h2>🎧 Kacsa Sufni Rádió</h2><p>Hobbiból, lelkesedésből, a zenék szeretetéből. A műsorok és az élő közvetítések az adástervben kapnak helyet, a közösséghez pedig a Kapcsolatok fülön csatlakozhatsz.</p><div class="actions"><button class="action-link" data-open-tab="program" type="button">🗓️ Nézd meg a terveket</button><button class="action-link" data-open-tab="contact" type="button">🤝 Kapcsolódjunk</button></div></article>
+
+<article class="card" id="android-download-card" hidden>
+<p class="section-label">ANDROID / LETÖLTÉS</p>
+<h2>📱 Kacsa Sufni Rádió Androidra</h2>
+<p>Töltsd le a hivatalos hallgatói alkalmazást, és hallgasd a Sufnit telefonról is.</p>
+<div class="actions"><a class="action-link" data-apk-download href="./downloads/KacsaSufniRadio-kiadas.apk" download>⬇️ Android APK letöltése</a></div>
+<p class="fine-print">Android 8.0 vagy újabb. Ez a hallgatói kiadás; a szerver- és DJ-vezérlés nem része.</p>
+</article>
 </div>
 </section>
 
@@ -107,6 +115,17 @@
 <footer><div class="footer-inner"><span>🦆 KACSA SUFNI RÁDIÓ · JÓ ZENÉK, JÓ HANGULAT</span><span>Retró szív, modern hullámhossz. ♫</span></div></footer>
 </div>
 <script>
+// Reveal the Android download card only after the APK is actually deployed.
+async function revealAndroidDownloadCard(){
+ const card=document.getElementById('android-download-card');
+ if(!card)return;
+ try{
+  const response=await fetch('./downloads/KacsaSufniRadio-kiadas.apk',{method:'HEAD',cache:'no-store'});
+  if(response.ok)card.hidden=false;
+ }catch(e){/* Keep the card hidden while the APK is unavailable. */}
+}
+revealAndroidDownloadCard();
+
 const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
 function openTab(name){const target=document.getElementById('tab-'+name);if(!target)return;tabs.forEach(t=>{const active=t===target;t.setAttribute('aria-selected',String(active));const panel=document.getElementById(t.getAttribute('aria-controls'));panel.classList.toggle('active',active);panel.hidden=!active});if(name==='info'){loadWeather();loadFx();}if(name==='sport')loadSports();if(name==='program')renderCalendar();}
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>openTab(t.id.replace('tab-','')));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length].focus();}})});
